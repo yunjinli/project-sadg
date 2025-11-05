@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="SADG: Segment Any Dynamic Gaussian Without Object Trackers">
-  <meta property="og:title" content="SADG: Segment Any Dynamic Gaussian Without Object Trackers"/>
-  <meta property="og:description" content="We introduce SADG, Segment Any Dynamic Gaussian Without Object Trackers, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs."/>
+  <meta name="description" content="TRASE: Tracking-free 4D Segmentation and Editing">
+  <meta property="og:title" content="TRASE: Tracking-free 4D Segmentation and Editing"/>
+  <meta property="og:description" content="We introduce TRASE, Tracking-free 4D Segmentation and Editing, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs."/>
   <meta property="og:url" content="https://yunjinli.github.io/project-sadg"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/teaser.jpg" />
@@ -14,8 +14,8 @@
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="SADG: Segment Any Dynamic Gaussian Without Object Trackers">
-  <meta name="twitter:description" content="We introduce SADG, Segment Any Dynamic Gaussian Without Object Trackers, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs.">
+  <meta name="twitter:title" content="TRASE: Tracking-free 4D Segmentation and Editing">
+  <meta name="twitter:description" content="We introduce TRASE, Tracking-free 4D Segmentation and Editing, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/teaser.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>SADG: Segment Any Dynamic Gaussian Without Object Trackers</title>
+  <title>TRASE: Tracking-free 4D Segmentation and Editing</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -203,15 +203,15 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SADG: Segment Any Dynamic Gaussian Without Object Trackers</h1>
+            <h1 class="title is-1 publication-title">TRASE: Tracking-free 4D Segmentation and Editing</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://yunjinli.github.io/" target="_blank">Yun-Jin Li</a><sup>1</sup>,</span>
+                <a href="https://yunjinli.github.io/" target="_blank">Yun-Jin Li</a><sup>1<span>*</span></sup>,</span>
                 <span class="author-block">
-                  <a href="https://cvg.cit.tum.de/members/gladkova" target="_blank">Mariia Gladkova</a><sup>1,2</sup>,</span>
+                  <a href="https://cvg.cit.tum.de/members/gladkova" target="_blank">Mariia Gladkova</a><sup>1,2<span>*</span></sup>,</span>
                   <span class="author-block">
-                    <a href="https://yan-xia.github.io/" target="_blank">Yan Xia</a><sup>1,2</sup>,</span>
+                    <a href="https://yan-xia.github.io/" target="_blank">Yan Xia</a><sup>1,2<span>&#8224;</span></sup>,</span>
                     <span class="author-block">
                         <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>1,2</sup>
                   </span>
@@ -221,10 +221,18 @@
                     <span class="author-block"><sup>1</sup>Technical University of Munich, </span>
                     <span class="author-block"><sup>2</sup>Munich Center for Machine Learning, </span>
                   </div>
+                  
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">3DV 2026</span>
+                  </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
+                      <div class="item">
+                          <!-- Your image here -->
+                          <img src="static/images/3dv2026_banner.png" alt="3DV2025" class="center" width="50%"/>
+                         </div>
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/2411.19290" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
@@ -248,7 +256,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/yunjinli/SADG-SegmentAnyDynamicGaussian" target="_blank"
+                    <a href="https://github.com/yunjinli/TRASE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -311,7 +319,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Understanding dynamic 3D scenes is fundamental for various applications, including extended reality (XR) and autonomous driving. Effectively integrating semantic information into 3D reconstruction enables holistic representation that opens opportunities for immersive and interactive applications. To this end, we introduce SADG, Segment Any Dynamic Gaussian Without Object Trackers, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs. We propose to learn semantically-aware features by leveraging masks generated from the Segment Anything Model (SAM) and utilizing our novel contrastive learning objective based on hard pixel mining. The learned Gaussian features can be effectively clustered without further post-processing. This enables fast computation for further object-level editing, such as object removal, composition, and style transfer by manipulating the Gaussians in the scene. Due to the lack of consistent evaluation protocol, we extend several dynamic novel-view datasets with segmentation benchmarks that allow testing of learned feature fields from unseen viewpoints. We evaluate SADG on proposed benchmarks and demonstrate the superior performance of our approach in segmenting objects within dynamic scenes along with its effectiveness for further downstream editing tasks. 
+            Understanding dynamic 3D scenes is fundamental for various applications, including extended reality (XR) and autonomous driving. Effectively integrating semantic information into 3D reconstruction enables holistic representation that opens opportunities for immersive and interactive applications. To this end, we introduce TRASE, Tracking-free 4D Segmentation and Editing, a novel approach that combines dynamic Gaussian Splatting representation and semantic information without reliance on object IDs. We propose to learn semantically-aware features by leveraging masks generated from the Segment Anything Model (SAM) and utilizing our novel contrastive learning objective based on hard pixel mining. The learned Gaussian features can be effectively clustered without further post-processing. This enables fast computation for further object-level editing, such as object removal, composition, and style transfer by manipulating the Gaussians in the scene. Due to the lack of consistent evaluation protocol, we extend several dynamic novel-view datasets with segmentation benchmarks that allow testing of learned feature fields from unseen viewpoints. We evaluate TRASE on proposed benchmarks and demonstrate the superior performance of our approach in segmenting objects within dynamic scenes along with its effectiveness for further downstream editing tasks. 
           </p>
         </div>
       </div>
